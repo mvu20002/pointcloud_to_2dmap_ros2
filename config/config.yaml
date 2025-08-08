@@ -1,0 +1,22 @@
+# PointCloud to 2D Map Node Configuration
+
+pointcloud_to_2dmap_node:
+  ros__parameters:
+    # Map generation parameters
+    resolution: 0.1                    # Pixel resolution (meters per pixel)
+    map_width: 1024                    # Map width in pixels
+    map_height: 1024                   # Map height in pixels
+    
+    # Point cloud filtering parameters
+    min_points_in_pix: 2               # Minimum points in a pixel to be considered occupied
+    max_points_in_pix: 5               # Maximum points in a pixel for saturation
+    min_height: 0.5                    # Minimum height of clipping range (meters)
+    max_height: 1.0                    # Maximum height of clipping range (meters)
+    
+    # Input/Output parameters
+    input_pcd: ""                      # Path to input PCD file
+    dest_directory: ""                 # Destination directory for output files
+    
+    # ROS2 specific parameters
+    frame_id: "map"                    # Frame ID for the generated occupancy grid
+    publish_occupancy_grid: true       # Whether to publish occupancy grid topic
